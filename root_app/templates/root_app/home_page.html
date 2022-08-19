@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Science2 MA Silahul Ulum</title>
+  <meta name="description" content="Profil kelas MIPA 2 (2021 - 2022) Madrasah Aliyah Silahul Ulum, Asempapan Trangkil Pati. science2masu">
+
+  <link href="{% static 'root_app/home_page/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+  <section id="content">
+    <div class="hut_nkri">
+      <img src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/hut-nkri-77.png">
+    </div>
+    <div id="section1">
+      <div class="img-w-desc">
+        <div class="iwd-wrapper1">
+          <h1>Kelas paling cantik dan juara, mungkin...</h1>
+          <p class="secondaryText">Kelas MIPA2 (2021 - 2022) MA Silahul Ulum</p>
+        </div>
+        <div class="iwd-wrapper2">
+          <img alt="foto kelas"
+            src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/foto_kelas2.webp">
+        </div>
+      </div>
+    </div>
+
+    <div id="section2">
+      <div class="child">
+        <img alt="students icon"
+          src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/people.png">
+        <p>27 total siswa</p>
+      </div>
+      <div class="separator"></div>
+      <div class="child">
+        <img alt="ambitious face"
+          src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/face.png">
+        <p>Sekitar 5 siswa yang aktifnya nggak tertolong</p>
+      </div>
+      <div class="separator"></div>
+      <div class="child">
+        <img alt="professions"
+          src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/work.png">
+        <p>+- 10 profesi favorit</p>
+      </div>
+    </div>
+
+    <!--
+      <div id="temp_bd_card" style="margin-top: 200px; display: flex; flex-direction: column; align-items:center">
+        <p style="text-align:center; font-size:18px; opacity: .8">
+          By the way .....
+        </p>
+        <p style="text-align:center; margin-top: -10px;font-size:14px; opacity: .7;">
+          Today is the developer's birthday. Yeah today, 11 June !. So... happy birthday to me :)
+        </p>
+        <img class="card" src="{% static 'images/dev-gitar.png' %}"
+        style="width: 100%; max-width: 500px; margin-top: 15px; min-width: 300px">
+      </div>
+    -->
+
+    <div id="section-waliKelas">
+      <h1>Wali kelas tercinta kami</h1>
+      <p class="secondaryText">Terimakasih sudah menjadi wali kelas kami yang hebat,
+        yang sudah mengarahkan kami, dan juga
+        yang sudah bersabar menghadapi kelakuan kelakuan kami :D.
+      </p>
+      <div class="cardContainer">
+        <div class="item card">
+          <img width=""
+            src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/bu_lawi.webp">
+          <div class="grad"></div>
+          <div class="content">
+            <p class="name">Bulawi, S.Pd.</p>
+            <p class="grade">X MIPA 2</p>
+          </div>
+        </div>
+        <div class="item card">
+          <img src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/bu_yumi.webp">
+          <div class="grad"></div>
+          <div class="content">
+            <p class="name">Dra. Yumiati</p>
+            <p class="grade">XI MIPA 2</p>
+          </div>
+        </div>
+        <div class="item card">
+          <img src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/bu_ida.webp">
+          <div class="grad"></div>
+          <div class="content">
+            <p class="name">Ida Murjiningsih, S.Si.</p>
+            <p class="grade">XII MIPA 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="section3" class="img-w-desc">
+      <div class="iwd-wrapper1">
+        <h1>Madrasah kami</h1>
+        <p class="secondaryText">Silahul ulum | Asempapan Trangkil Pati</p>
+        <a target=”_blank” href="https://silahululum.com">Website resmi</a>
+      </div>
+      <div class="iwd-wrapper2">
+        <img alt="foto gedung sekolahan"
+          src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/gedung_ma.webp">
+      </div>
+    </div>
+
+    <div id="section4">
+      <h2>Siswa yang terlalu ambis</h2>
+      <p class="secondaryText" style="text-align:center; margin: 20px auto; max-width: 550px">
+        Siswa ini mendapatkan banyak sekali penghargaan dari dalam sekolah maupun luar sekolah. Tenang, banyak siswa
+        lainnya yang juga seperti mereka kok :)
+      </p>
+      <div class="card-container">
+        <div class="card">
+          <p class="name">Fitria Noviastuti</p>
+          <hr>
+          <div class="content">
+            <img alt="fitria noviastuti" loading="lazy"
+              src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/fitria_noviastuti.webp">
+
+            <em>
+              <div class="quote-word">
+                <p class="quote-symbol" style="align-self: flex-start">"</p>
+                <p class="secondaryText">علق همتك في الثريا وان كان رجلك تحت الثرى</p>
+                <p class="secondaryText">Gantungkan cita-citamu setinggi bintang Tsurroyya walaupun kakimu berpijak pada
+                  bumi</p>
+              </div>
+            </em>
+          </div>
+        </div>
+        <div class="card">
+          <p class="name">Ahla Kholila</p>
+          <hr>
+          <div class="content">
+            <img alt="ahla kholila" loading="lazy"
+              src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/ahla_kholila.webp">
+
+            <em>
+              <div class="quote-word">
+                <p class="quote-symbol" style="align-self: flex-start">"</p>
+                <p class="secondaryText">kejar terus yang kamu mau sampe dapet, keep fighting!!!</p>
+              </div>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="section6">
+      <h2>Gallery</h2>
+      <p class="secondaryText">(Click the image to open in the new tab)</p>
+      <div id="gallery">
+        {% for img_url in img_url_list %}
+        <a href="/external_hit?url={{ img_url }}" target=”_blank”>
+          <p>loading...</p>
+
+          <img title="Click to open in new tab" class="galleryItem" loading="lazy" src="{{ img_url }}">
+        </a>
+        {% endfor %}
+      </div>
+      <a href="{% url 'root_app:gallery' %}" class="view_more_btn">View More</a>
+    </div>
+
+    <div id="section5">
+      <h2>Join us !</h2>
+      <p class="secondaryText">Mari bergabung dengan madrasah kami !. Sekarang kamu bisa daftar secara online dengan mudah
+        loh!</p>
+      <a target=”_blank” href="https://silahululum.com/" class="button">Daftar sekarang</a>
+
+      <img alt="foto alumni 2022"
+        src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/foto_angkatan.webp">
+    </div>
+
+    <!-- ads item -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8046468518400304"
+      data-ad-slot="9785529442"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+{% endblock %}

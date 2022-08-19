@@ -1,0 +1,15 @@
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/ahla_kholila.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/bu_ida.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/bu_lawi.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/bu_yumi.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/dev-gitar.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/fitria_noviastuti.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/foto_angkatan.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/foto_kelas.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/foto_kelas2.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gedung_ma.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/header_img.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/ied-design-material1.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/logo_kelas.webp
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/web-preview.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/web-preview2.png

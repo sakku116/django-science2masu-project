@@ -1,0 +1,50 @@
+body {
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+#content {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+#header {
+    text-align: center;
+}
+
+#info {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    border-top: 6px solid rgb(0, 174, 255);
+    padding: 5px 10px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.1);
+}
+#info .header {
+    text-align: center;
+    font-size: 17px;
+}
+#info .content {
+    text-align: justify;
+}
+
+#specialUserContent{
+    white-space: pre-wrap; /* to add breakline automatic based on original text */
+    text-align: left;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 1150px) {
+    /* screen minimum 1150px or more than 1150px */
+    #content {
+        width: 990px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

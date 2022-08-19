@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Memo - Science2 MA Silahul Ulum</title>
+  <meta name="description" content="Memo kelas MIPA 2 (2021 - 2022) MA Silahul Ulum">
+
+  <link href="{% static 'root_app/memo_page/style.css' %}" rel="stylesheet">
+
+  <!-- setup react easiest way using cdn -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+{% endblock %}
+
+{% block body %}
+  <section id="content">
+    <!-- root -->
+    <div id="root"></div>
+
+    <script type="text/babel" src="{% static 'root_app/memo_page/react_script.js' %}"></script>
+
+    <!-- ads item -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8046468518400304"
+      data-ad-slot="9785529442"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block head %}
+  <title>Letter</title>
+  <meta name="description" content="Private letter for someone that the developer love">
+  
+  <link href="{% static 'root_app/letter_page/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+  <section id="content">
+
+    <div id="header">
+      <p>signed in as @{{ request.user.username }} <a href="{% url 'root_app:logout' %}">Logout?</a></p>
+
+      <!-- greet the user -->
+      {% if request.user.get_full_name != "" %}
+        <h1>Hai, {{ request.user.get_full_name }}!</h1>
+      {% else %}
+        <h1>Hai, {{ request.user.username }}!</h1>
+      {% endif %}
+
+      {% if is_special_user %}
+        <p>Kamu adalah user spesial!. Ya, kamu adalah orang spesial yang ku maksud sebelumnya :)</p>
+      {% else %}
+        <p style="opacity:.5">Sayangnya kamu tidak user spesial :D</p>
+      {% endif %}
+    </div>
+
+    {% if is_special_user %}
+      <div id="info" style="margin-top: 50px">
+        <p class="header">Intro</p>
+        <hr>
+        <p class="content">
+          <em>
+            {{ intro_file_content }}
+          </em>
+        </p>
+      </div>
+    {% endif %}
+
+    <hr style="margin-top: 50px;">
+    <p id="specialUserContent">{{ file_content }}</p>
+
+  </section>
+{% endblock %}

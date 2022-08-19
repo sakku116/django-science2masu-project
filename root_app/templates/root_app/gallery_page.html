@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Gallery - Science2 MA Silahul Ulum</title>
+  <meta name="description" content="Galeri kelas MIPA 2 (2021 - 2022) MA Silahul Ulum">
+
+  <link href="{% static 'root_app/gallery_page/style.css' %}" rel="stylesheet">
+  <script src="{% static 'root_app/gallery_page/script.js' %}"></script>
+
+  <!-- masonry layout (docs: https://masonry.desandro.com/) -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- to trigger layout when images is loaded -->
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+{% endblock %}
+
+{% block body %}
+  <section id="content">
+
+    <div id="header_container">
+      <div class="header_wrapper">
+        <h1>Galeri</h1>
+        <h2>Science2</h2>
+      </div>
+      <hr>
+    </div>
+
+    <div id="gallery_container" class="masonry-grid">
+      <!--    
+      <a href="/external_hit?url={{ img_url }}" target=”_blank”>
+        <img title="Click to open in new tab" class="masonry-grid-item" loading="lazy" src='{{ img_url }}' />
+      </a>
+      -->
+    </div>
+    
+    <p id="fetch_data_loading" class="secondaryText">Fetching data .....</p>
+
+    <!-- ads item -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8046468518400304"
+      data-ad-slot="9785529442"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+{% endblock %}

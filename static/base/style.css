@@ -1,0 +1,421 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.5;
+    color: #2A2C2E;
+    font-size: 15px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fbfbfb;
+}
+
+#content {
+    min-height: 90vh !important;
+}
+
+.secondaryText {
+    color: #616466;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+#indexHeader {
+    width: 100%;
+    min-height: 300px;
+    height: calc(90vh - 60px);
+    max-height: 720px;
+    position: relative;
+    overflow: hidden;
+}
+#indexHeader #headerImg {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+    filter: blur(2px);
+    */
+}
+.indexHeader__ied-decoration {
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+}
+.indexHeader__ied-decoration img {
+    height: 130%;
+    max-width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: opacity(.3)
+}
+#indexHeader .grad {
+    background-image: linear-gradient(to bottom, #009efd, #2af598);
+    position: absolute; width: 100%; height:100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    filter: brightness(85%);
+}
+#indexHeader .content {
+    box-sizing: border-box;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 2px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#indexHeader .content .title {
+    margin-bottom: 15px;
+}
+#indexHeader .content .icon {
+    width: 100px;
+    filter: drop-shadow(0 0 5px #575757);
+}
+#indexHeader .content .date {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+#indexHeader .content .school {
+    margin-top: 0;
+}
+#indexHeader .repo_link_wrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    filter: drop-shadow(0 0 2px #616161);
+}
+#indexHeader .repo_link_wrapper img {
+    filter: invert(.95);
+}
+#indexHeader .repo_link_wrapper p {
+    color: #E4E4E4;
+}
+.repo_link_wrapper {
+    z-index: 2;
+    display: flex;
+    flex-direction: row-reverse ;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 8px;
+    text-decoration: none;
+}
+.repo_link_wrapper img {
+    width: 20px;
+    height: 20px;
+}
+.repo_link_wrapper p {
+    margin: 0;
+    font-size: .8rem;
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+}
+
+nav {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    z-index: 2;
+
+    background: rgb(92, 149, 255);
+
+    height: 55px;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    transition-duration: .3s;
+    transition-property: height;
+
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2),
+                0 0 7px rgba(0, 0, 0, .3);
+}
+
+nav #defaultBackground{
+    position: absolute;
+    height: 55px;
+    width: 100%;
+
+    background: rgb(61, 129, 255);
+    transition-property: box-shadow;
+    transition-duration: .3s;
+}
+
+#nav .onScroll {
+    box-shadow: 0px 1px 2px rgb(0, 0, 0, 0.15),
+    0px 4px 3px rgb(0, 0, 0, 0.15);
+}
+
+#defaultBackground .onScroll {
+    box-shadow: 0px 1px 2px rgb(0, 0, 0, 0.15),
+    0px 4px 3px rgb(0, 0, 0, 0.15);
+}
+
+nav #navIcon {
+    position: absolute;
+    top: 6.5px; /* should be 6.5px */
+    left: 35px; 
+    opacity: 1;
+    margin: 0;
+
+    transition-property: top, opacity;
+    transition-duration: .3s;
+    transition-delay: .15s;
+
+    color: white;
+    text-align: center;
+    height: 40px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+nav #navIcon img {
+    width: inherit;
+    height: inherit;
+}
+
+nav #navIcon h1 {
+    font-size: 22px
+}
+
+nav #linkContainer {
+    font-family: 'Rubik';
+    font-size: 15px;
+
+    position: absolute;
+    top: -2px;
+    right: 30px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    transition-property: top, left, right, transform;
+    transition-duration: .3s;
+}
+nav #linkContainer.center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav #linkContainer a {
+    padding: 15px;
+
+    color: white;
+    white-space: nowrap;
+    text-decoration: none;
+
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+nav #linkContainer a:hover {
+    background-color: rgb(149, 159, 255);
+}
+nav #linkContainer a:hover {
+    background-color: rgb(149, 159, 255);
+}
+
+nav #navMenuHamburger {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 15px;
+    right: 25px;
+
+    background: transparent;
+    width: 23px;
+    height: 23px;
+
+    border: none;
+}
+nav #hamburgerLine {
+    background: white;
+
+    width: inherit;
+    height: 3px;
+    border-radius: 2px;
+
+    transition-property: box-shadow;
+    transition-duration: .2s;
+}
+nav #navMenuHamburger:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2),
+                    0 0 7px rgba(0, 0, 0, .3);
+    }
+    nav #navIcon {
+        left: 20px;
+    }
+    nav #linkContainer {
+        font-size: 14px;
+        right: 55px;
+    }
+    nav #linkContainer.center {
+        left: initial;
+        transform: initial;
+    }
+    /* all except last-child (home link) */
+    nav #linkContainer a {
+        display: none;
+    }
+    nav #navMenuHamburger {
+        display: flex;
+    }
+    /* add .responsive class if hamburger clicked */
+    nav.responsive {
+        height: 335px;
+        transition-property: height;
+    }
+    nav.responsive #defaultBackground {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .4),
+                    0 0 7px rgba(0, 0, 0, .5);
+    }
+    nav.responsive #hamburgerLine{
+        box-shadow: 0 0 2px rgb(212, 226, 255),
+                    0 0 4px rgb(212, 226, 255);
+    }
+    nav.responsive #linkContainer{
+        top: 60px;
+        right: 0;
+        width: inherit;
+        flex-direction: column;
+
+        transition-property: right;
+        transition-duration: .3s;
+    }
+    nav.responsive #linkContainer a {
+        display: block;
+        float: none;
+        text-align: right;
+        padding-right: 25px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    nav #navIcon h1 {
+        display: none;
+    }
+}
+
+#footer {
+    height: auto;
+    margin-top: 100px;
+    background-color: rgba(0,0,0,.07);
+}
+#footer .inner {
+    min-height: 100px;
+    width: inherit;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    box-shadow: inset 0px -110px 80px -70px rgba(0,0,0,0.3);
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    text-underline-offset: 2px;
+    min-height: 100px;
+    max-width: 840px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 30px;
+    row-gap: 50px;
+    column-gap: 40px;
+    font-size: .9rem;
+}
+.footer-wrapper .links {
+    min-width: 80px;
+}
+.footer-wrapper .links li {
+    transition: transform .2s;
+}
+.footer-wrapper .links li:hover{
+    transform: translateX(10%);
+}
+.footer-wrapper .about h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.footer-wrapper .about {
+    justify-self: flex-start;
+}
+.footer-wrapper .section-title {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 3px;
+    opacity: 1 !important;
+}
+.section-title span {
+    font-size: .8rem;
+}
+.footer-wrapper ul {
+    padding: 0;
+    list-style-type: none;
+}
+.footer-wrapper li {
+    margin-top: 5px;
+}
+.footer-wrapper li a {
+    color: inherit;
+}
+.footer-wrapper .about p,a{
+    margin: 0;
+    margin-top: 3px;
+}
+#footer .inner p,li {
+    opacity: .8;
+}
+
+#footer .socmed-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+#footer .socmed-button img {
+    width: 20px;
+}
+#footer .socmed-button p {
+    margin: 0;
+}
+.adsbygoogle {
+    margin-top: 100px;
+}

@@ -1,0 +1,9 @@
+body {
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+#content {
+    text-align: center;
+    min-height: 90vh;
+}

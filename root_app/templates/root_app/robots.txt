@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /gallery/
+
+User-agent: *
+Disallow: /letter/
+
+Sitemap: https://science2masu.herokuapp.com/sitemap.xml

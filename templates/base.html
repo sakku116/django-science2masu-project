@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="keywords" 
+      content="silahul ulum, masu, science2, mipa 2, profil kelas">
+    <meta name="author" content="Zakky Supriyadi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="https://science2masu-sf-gh.imgix.net/static/images/web-preview2.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://science2masu.herokuapp.com" />
+    <meta property="og:title" content="Science2 MASU" />
+    <meta property="og:description" content="Website kelas MIPA 2 (2021 - 2022) Madrasah Aliyah Silahul Ulum" />
+
+    <link rel="icon" href="https://science2masu-sf-gh.imgix.net/static/favicon.ico">
+    <meta name="google-site-verification" content="d3KruGSD_ntp_gOK7g7Nryl4FpCa0xo2LMP6KOfiOv8" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- google adsense script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8046468518400304"
+      crossorigin="anonymous">
+    </script>
+
+    <!-- base css and script -->
+    <link href="{% static 'base/style.css' %}" rel="stylesheet">
+    <script src="{% static 'base/script.js' %}"></script>
+
+    <!-- block head -->
+    {% block head %}
+    {% endblock %}
+    <!-- endblock -->
+  </head>
+
+  <body>
+    {% if request.resolver_match.view_name == 'root_app:index' %}
+    <!-- if page is 'index' add header -->
+      <div id="indexHeader">
+        <img id="headerImg" alt="header_img" style="object-fit: cover;"
+          src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/header_img.webp">
+        <!--
+          <div class="indexHeader__ied-decoration">
+            <img src="https://science2masu-sf-gh.imgix.net/static/images/ied-design-material1.png">
+          </div>
+        -->
+        <div class="grad"></div>
+        <div class="content">
+          <img alt="logo kelas" class="icon"
+            src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/images/logo_kelas.webp">
+          <h1 class="title">Science2</h1>
+          <p class="date">(2021 - 2022) | Madrasah Aliyah Silahul Ulum</p>
+        </div>
+        <a class="repo_link_wrapper" target="_blank" href="/external_hit?url=https://github.com/sakku116/django-science2masu-project">
+          <img alt="project repo" src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/github-icon.png">
+          <p>Project</p>
+        </a>
+      </div>
+    <!-- endif -->
+    {% endif %}
+
+    <nav id="nav">
+      <div id="defaultBackground"></div>
+      <a id="navIcon" href="{% url 'root_app:index' %}">
+        <img src="https://science2masu-sf-gh.imgix.net/static/favicon.ico" alt="icon">
+        <h1>Science2</h1>
+      </a>
+      <div id="linkContainer">
+        <a href="{% url 'root_app:index' %}">Home</a>
+        <a href="{% url 'root_app:gallery' %}">Gallery</a>
+        <a href="{% url 'root_app:memo' %}">Memo</a>
+        <a href="{% url 'root_app:letter' %}">Letter</a>
+        {% if request.user.username == "" %}
+          <a href="{% url 'root_app:login' %}?direct_to=index">Login</a>
+        {% else %}
+          <a href="{% url 'root_app:logout' %}">Logout @{{ request.user.username }}</a>
+        {% endif %}
+      </div>
+      <button id="navMenuHamburger" type="button" onclick="navHamburgerActive()">
+        <div id="hamburgerLine"></div>
+        <div id="hamburgerLine"></div>
+        <div id="hamburgerLine"></div>
+      </button>
+    </nav>
+
+    {% if request.resolver_match.view_name == 'root_app:index' %}
+    <!-- if page is 'index' add script that handle the nav -->
+      <script>
+        const header = document.querySelector('#indexHeader');
+        const lastHeaderContent = header.querySelector('.date');
+        const nav = document.querySelector('#nav');
+        const navIcon = document.querySelector('#navIcon');
+        const linkContainer = document.querySelector('#linkContainer');
+
+        // set default
+        navIcon.style.top = '-50px'; // set default to 'hide'
+        navIcon.style.opacity = 0; // set default to 'hide'
+        nav.style.position = 'sticky';
+        linkContainer.classList.add('center')
+
+        window.onscroll = function () {
+          controlNav();
+        };
+        
+        /* control the nav style if '#indexHeader' is exist (only in index page) */
+        function controlNav() {
+          // if the last content of the header is passed when page is scrolled, then show the navIcon
+          if (window.pageYOffset > lastHeaderContent.offsetTop + lastHeaderContent.offsetHeight) {
+            // show navIcon
+            navIcon.style.top = "6.5px";
+            navIcon.style.opacity = 1;
+            // center linkContainer
+            linkContainer.classList.remove('center');
+          } else {
+            // hide navIcon
+            navIcon.style.top = "-50px";
+            navIcon.style.opacity = 0;
+
+            if (window.innerWidth > 700) {
+              linkContainer.classList.add('center');
+            };
+          };
+        };
+      </script>
+    <!-- endif -->
+    {% endif %}
+
+    <!-- block body -->
+    {% block body %}
+    {% endblock %}
+    <!-- endblock -->
+
+    <footer id="footer" style="display:block">
+      <div class="inner">
+        <div class="footer-wrapper">
+          <div class="about">
+            <h2>Science2 MASU</h2>
+            <p>MIPA 2 tahun 2019 - 2022</p>
+            <p>MA Silahul Ulum</p>
+            <p>Asempapan, Trangkil, Pati</p>
+            <a href="https://silahululum.com">https://silahululum.com</a>
+          </div>
+          <div class="links">
+            <p class="section-title">Explore</p>
+            <ul>
+              <li><a href="{% url 'root_app:index' %}">Home</a></li>
+              <li><a href="{% url 'root_app:gallery' %}">Gallery</a></li>
+              <li><a href="{% url 'root_app:letter' %}">Letter</a></li>
+              <li><a href="{% url 'root_app:login' %}">Login</a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <p class="section-title">Follow <span>(author)</span></p>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/zakkykun116">
+                  <div class="socmed-button">
+                    <img
+                      src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/facebook-icon.png">
+                    <p>Facebook</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/sakku_116/">
+                  <div class="socmed-button">
+                    <img
+                      src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/instagram-icon.png">
+                    <p>Instagram</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCrzgY0htidIYgnqAW1CLuGw">
+                  <div class="socmed-button">
+                    <img
+                      src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/youtube-icon.png">
+                    <p>Youtube</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sakku116">
+                  <div class="socmed-button">
+                    <img
+                      src="https://cdn.statically.io/gh/sakku116/science2masu-static-files/main/static/icons/github-icon.png">
+                    <p>Github</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

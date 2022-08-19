@@ -1,0 +1,11 @@
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/bukber.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/event-pramuka.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-l1.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-l2.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-p1.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-p2.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-p3.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-lulusan-p4.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/foto-pra-muwaddaah.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/putri-ft-buyumi.png
+https://raw.githubusercontent.com/sakku116/science2masu-static-files/main/static/images/gallery/ziarah.png

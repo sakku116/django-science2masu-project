@@ -1,0 +1,5 @@
+__pycache__/
+.env
+*dbdump.json
+*db.sqlite3
+test.*

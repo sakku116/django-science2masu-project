@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+  <title>Login - Science2 MA Silahul Ulum</title>
+  
+  <link href="{% static 'root_app/login_page/style.css' %}" rel="stylesheet">
+  <script src="{% static 'root_app/login_page/script.js' %}"></script>
+{% endblock %}
+
+
+{% block body %}
+  <section id="content">
+    <div class="base">
+      <div class="infoCard">
+        {% if message %}
+          <p1 id="messageInfo"> {{ message }} </p1>
+        {% endif %}
+      </div>
+      <div class="loginCard">
+        <div class="titleContainer">
+          <p class="title">Log in</p>
+        </div>
+        <form class="loginForm" action="{% url 'root_app:login' %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="direct_to" value="{{ direct_to }}">
+          <input type="text" name="username" placeholder="Username">
+          <input type="password" name="password" placeholder="Password">
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+
+      <p1 style="opacity: .5; margin-top: 20px"><em>* gunakan akun demo;demo1234 untuk mencoba</em></p1>
+    </div>
+  </section>
+{% endblock %}
