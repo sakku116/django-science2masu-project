@@ -19,6 +19,11 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# setup log file
+with open('request_logs.txt', 'w') as file:
+    pass
+
+
 # ============================> LOAD ENV VARS <============================
 # load .env file from base dir
 load_dotenv(str(BASE_DIR) + r'\.env')
