@@ -1,0 +1,1 @@
+from .write_log import writeLog
