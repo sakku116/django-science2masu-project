@@ -5,3 +5,4 @@ from .is_special_user import isSpecialUser
 from .make_send_mail_request import makeSendMailRequest
 from .convert_urls_base import convertUrlsBase
 from .get_gh_blob_list import getGhBlobList
+from .colorize_string import colorizeString
