@@ -18,15 +18,15 @@ from modules import (
 
 
 # ------------------- VIEWS --------------------
-def index(request):    
-    return render(
-        request, 
-        "root_app/home_page.html", 
-        {
-            "img_url_list": convertUrlsBase(createUrlListFromFile('static/images/gallery/img_url_list.txt'), use_statically_url=True),
-            "is_page_need_header": True,
-        }
-    )
+def index(request):
+    context = {
+        "img_url_list": convertUrlsBase(
+            createUrlListFromFile('static/images/gallery/img_url_list.txt'), 
+            use_statically_url=True),
+        "is_page_need_header": True,
+    }
+
+    return render(request, "root_app/home_page.html", context)
 
 def letter(request):
     if not request.user.is_authenticated:
@@ -52,7 +52,7 @@ def letter(request):
                     token=settings.ENV_GITHUB_TOKEN
                 )
             except:
-                file_content = "Error to get file content"
+                file_content = "Error while getting file content."
                 print(file_content)
 
             print(f'{request.user} is special user or superuser')
@@ -83,35 +83,30 @@ def login_view(request):
 
     #-----------------------------------------------
     def default_login_view(message, infoStatus, direct_to=None):
-        # return login view back 
-        return render(
-            request, 
-            "root_app/login_page.html", 
-            {
-                "message": message,
-                "infoStatus": infoStatus,
-                "direct_to": direct_to
-            }
-        )
+        """ return login default view """
+         
+        context = {
+            "message": message,
+            "infoStatus": infoStatus,
+            "direct_to": direct_to
+        }
+        return render(request, "root_app/login_page.html", context)
     
     def login_success(message, infoStatus, direct_to='None'):
-        # notify
+        # notify (send mail)
         if isSpecialUser(request.user):
-            subject = "your crush login"
-            message = "Hi, your crush is logged in into your website. \ndon't forget to check the server log!."
-
             makeSendMailRequest(
                 csrftoken = csrf.get_token(request),
                 req_endpoint = request.build_absolute_uri('/api/send-mail'),
-                subject = subject,
-                message = message,
+                subject = "your crush login",
+                message = "Hi, your crush is logged in into your website. \ndon't forget to check the server log!.",
             )
 
-        # is direct_to empty handler
+        # redirect handler
         if direct_to == 'None' or direct_to == "":
             return HttpResponseRedirect(reverse('root_app:index'))
         else:
-            # is direct_to valid handler
+            # is direct_to valid
             try:
                 return HttpResponseRedirect(reverse(f'root_app:{direct_to}'))
             except:
@@ -124,42 +119,25 @@ def login_view(request):
         direct_to = request.POST.get('direct_to')
         # parameter that we got from query params of GET before and passed to hidden input field and then POST it via login button
 
-        # is form empty handler
         if username != "" or password != "":
             user = authenticate(request, username=username, password=password)
 
-            # auth handler
             if user is not None: # success
                 request.session.set_expiry(1209600)
                 login(request, user)
 
                 print(colored(f"=> [login success] = @{request.user.username}", 'blue', attrs=['reverse']))
-
-                return login_success(
-                    "Login berhasil!", 
-                    "success", 
-                    direct_to
-                )
+                return login_success("Login berhasil!", "success", direct_to)
 
             else: # failed
                 print(colored(f"=> [login failed] = @{username} (something was wrong)", 'blue', attrs=['reverse']))
+                return default_login_view("User tidak ditemukan, coba tanyakan pada admin (zakky)", 'fail', direct_to)
 
-                return default_login_view(
-                    "User tidak ditemukan, coba tanyakan pada admin (zakky)",
-                    'fail',
-                    direct_to
-                )
-        
         else:
-            return default_login_view(
-                "Form tidak boleh kosong", 
-                "fail", 
-                direct_to
-            )
+            return default_login_view("Form tidak boleh kosong", "fail", direct_to)
 
     #-----------------------------------------------
     if not request.user.is_authenticated: # user is not signed in
-        # backend handler
         if request.method == "POST":
             return try_login()
 
@@ -168,11 +146,7 @@ def login_view(request):
         else:
             message = "Selamat datang!. Login untuk mendapatkan akses khusus!"
             
-        return default_login_view(
-            message, 
-            "", 
-            queries["direct_to"]
-        )
+        return default_login_view(message, "", queries["direct_to"])
 
     else: # user already signed in
         return login_success(
