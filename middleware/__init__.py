@@ -27,6 +27,7 @@ class RequestMonitor:
             color = 'yellow'
         print(colorizeString(log_string, color, reverse=True))
 
+        # save log with threading
         write_log_thread = threading.Thread(target=writeLog, args=(log_string, 10,))
         write_log_thread.start()
 
