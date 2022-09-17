@@ -1,6 +1,6 @@
 from modules import colorizeString
 from datetime import datetime
-from utils import writeLog
+from modules import writeLog
 import threading
 
 class RequestMonitor:
