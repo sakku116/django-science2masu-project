@@ -28,6 +28,12 @@ def index(request):
 
     return render(request, "root_app/home_page.html", context)
 
+def requestLog(request):
+    if request.user.is_superuser:
+        return render(request, "root_app/request_log_page.html")
+    else:
+        pass
+
 def letter(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(f'/login/?direct_to=letter')
