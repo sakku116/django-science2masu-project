@@ -8,10 +8,10 @@ from termcolor import colored
 from django.middleware import csrf
 
 from modules import (
-    createUrlListFromFile, 
-    customLogInfo, 
-    getMyPrivateFileContent, 
-    isSpecialUser, 
+    createUrlListFromFile,
+    customLogInfo,
+    getMyPrivateFileContent,
+    isSpecialUser,
     makeSendMailRequest,
     convertUrlsBase
 )
@@ -21,7 +21,7 @@ from modules import (
 def index(request):
     context = {
         "img_url_list": convertUrlsBase(
-            createUrlListFromFile('static/images/gallery/img_url_list.txt'), 
+            createUrlListFromFile('static/images/gallery/img_url_list.txt'),
             use_statically_url=True),
         "is_page_need_header": True,
     }
@@ -64,10 +64,10 @@ def letter(request):
             print(f'{request.user} is special user or superuser')
 
         return render(
-            request, 
-            "root_app/letter_page.html", 
+            request,
+            "root_app/letter_page.html",
             {
-                'file_content': file_content, 
+                'file_content': file_content,
                 'intro_file_content': intro_file_content,
                 'is_special_user': is_special_user
             }
@@ -78,7 +78,7 @@ def memo(request):
 
 def gallery(request):
     return render(
-        request, 
+        request,
         "root_app/gallery_page.html"
     )
 
@@ -90,14 +90,14 @@ def login_view(request):
     #-----------------------------------------------
     def default_login_view(message, infoStatus, direct_to=None):
         """ return login default view """
-         
+
         context = {
             "message": message,
             "infoStatus": infoStatus,
             "direct_to": direct_to
         }
         return render(request, "root_app/login_page.html", context)
-    
+
     def login_success(message, infoStatus, direct_to='None'):
         # notify (send mail)
         if isSpecialUser(request.user):
@@ -117,7 +117,7 @@ def login_view(request):
                 return HttpResponseRedirect(reverse(f'root_app:{direct_to}'))
             except:
                 return HttpResponseRedirect(reverse("root_app:index"))
-    
+
     def try_login():
         # form
         username = request.POST.get('username')
@@ -151,12 +151,12 @@ def login_view(request):
             message = "Hanya user khusus yang boleh masuk!"
         else:
             message = "Selamat datang!. Login untuk mendapatkan akses khusus!"
-            
+
         return default_login_view(message, "", queries["direct_to"])
 
     else: # user already signed in
         return login_success(
-            "Anda telah login!", 
+            "Anda telah login!",
             "success", queries["direct_to"]
         )
 
