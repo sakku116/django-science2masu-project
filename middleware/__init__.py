@@ -9,9 +9,9 @@ class RequestMonitor:
 
     def __call__(self, request):
         response = self.get_response(request)
-        
+
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")        
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         user_agent = request.META['HTTP_USER_AGENT']
         view_name = request.resolver_match.view_name
         full_path = f'"{request.get_full_path()}"'
@@ -20,15 +20,17 @@ class RequestMonitor:
 
         log_string = f"=> ({dt_string}) = {user} | {full_path} ({view_name}) | {device}"
         max_log_line = 5
-        
+
         if user == '@AnonymousUser':
             color = 'white'
         else:
             color = 'yellow'
         print(colorizeString(log_string, color, reverse=True))
 
-        # save log with threading
-        write_log_thread = threading.Thread(target=writeLog, args=(log_string, 10,))
-        write_log_thread.start()
+        # exclude bot
+        if "bot" not in device.lower():
+            # save log with threading
+            write_log_thread = threading.Thread(target=writeLog, args=(log_string, 10,))
+            write_log_thread.start()
 
         return response
