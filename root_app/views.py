@@ -82,6 +82,12 @@ def gallery(request):
         "root_app/gallery_page.html"
     )
 
+def log(request):
+    return render(
+        request,
+        "root_app/log_page.html"
+    )
+
 def login_view(request):
     queries = {
         "direct_to": f"{request.GET.get('direct_to')}"
