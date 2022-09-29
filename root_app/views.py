@@ -83,9 +83,13 @@ def gallery(request):
     )
 
 def log(request):
+    with open(settings.BASE_DIR / "request_logs.txt", "r") as file:
+        log_content = file.readlines()
+
     return render(
         request,
-        "root_app/log_page.html"
+        "root_app/log_page.html",
+        {"log_content": log_content}
     )
 
 def login_view(request):

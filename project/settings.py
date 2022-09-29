@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # setup log file
-with open('request_logs.txt', 'w') as file:
+with open('request_logs.txt', 'r+') as file:
     pass
 
 

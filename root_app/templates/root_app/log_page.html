@@ -11,7 +11,12 @@
 
 {% block body %}
   <section id="content">
-    <h1>Hello Log Page</h1>
+    <h1>Request Log Monitor</h1>
+    <div id="log-container">
+      {% for log in log_content %}
+        <p>{{ log }}</p>
+      {% endfor %}
+    </div>
     <!-- ads item -->
     <ins class="adsbygoogle"
       style="display:block"

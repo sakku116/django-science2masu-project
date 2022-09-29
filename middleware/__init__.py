@@ -27,10 +27,10 @@ class RequestMonitor:
             color = 'yellow'
         print(colorizeString(log_string, color, reverse=True))
 
-        # exclude bot
+        # exclude bot request
         if "bot" not in device.lower():
             # save log with threading
-            write_log_thread = threading.Thread(target=writeLog, args=(log_string, 10,))
+            write_log_thread = threading.Thread(target=writeLog, args=(log_string, 100,))
             write_log_thread.start()
 
         return response

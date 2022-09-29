@@ -7,5 +7,21 @@ body {
     margin-top: 100px;
     margin-left: 70px;
     margin-right: 70px;
+}
 
+#log-container {
+    background: rgba(189, 189, 189, .1);
+    min-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    margin-top: 35px;
+    padding: 0 10px;
+    max-height: 700px;
+    overflow: auto;
+    font-size: .85rem;
+    line-height: .7rem;
+    font-family: monospace;
+    /* box-shadow: 0 5px 10px rgb(170, 170, 170); */
 }
