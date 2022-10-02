@@ -28,7 +28,9 @@ class RequestMonitor:
         print(colorizeString(log_string, color, reverse=True))
 
         # exclude bot request
-        if "bot" not in user_agent.lower() or "media" not in user_agent.lower() or "google" not in user_agent.lower():
+        if "bot" in user_agent.lower() or "media" in user_agent.lower() or "google" in user_agent.lower():
+            pass
+        else:
             # save log with threading
             write_log_thread = threading.Thread(target=writeLog, args=(log_string, 100,))
             write_log_thread.start()
