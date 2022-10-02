@@ -18,7 +18,7 @@ class RequestMonitor:
         user = f'@{request.user}'
         device = f"{user_agent[user_agent.find('(')+1:user_agent.find(')')]}"
 
-        log_string = f"=> ({dt_string}) = {user} | {full_path} ({view_name}) | {device}"
+        log_string = f"=> ({dt_string}) = {user} | {request.method} {full_path} ({view_name}) | {device}"
         max_log_line = 5
 
         if user == '@AnonymousUser':
