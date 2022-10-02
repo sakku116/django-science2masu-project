@@ -83,14 +83,17 @@ def gallery(request):
     )
 
 def log(request):
-    with open(settings.BASE_DIR / "request_logs.txt", "r") as file:
-        log_content = file.readlines()
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect("/login/?direct_to=log_page")
+    else:
+        with open(settings.BASE_DIR / "request_logs.txt", "r") as file:
+            log_content = file.readlines()
 
-    return render(
-        request,
-        "root_app/log_page.html",
-        {"log_content": log_content}
-    )
+        return render(
+            request,
+            "root_app/log_page.html",
+            {"log_content": log_content}
+        )
 
 def login_view(request):
     queries = {

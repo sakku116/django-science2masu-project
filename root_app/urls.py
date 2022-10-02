@@ -27,7 +27,7 @@ urlpatterns = [
     path('login/', views.login_view, name="login"),
     path('logout/', views.logout_view, name="logout"),
 
-    path('log/', views.log, name="log"),
+    path('log/', views.log, name="log_page"),
 
     path('external_hit', views.externalHit, name="external_hit"),
     path('sitemap.xml', views.siteMap, name="sitemap"),
