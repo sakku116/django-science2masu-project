@@ -3,4 +3,3 @@ __pycache__/
 *dbdump.json
 *db.sqlite3
 test.*
-request_logs.txt
