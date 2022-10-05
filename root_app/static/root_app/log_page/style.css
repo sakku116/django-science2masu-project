@@ -12,6 +12,7 @@ body {
 #log-container {
     background: rgba(189, 189, 189, .1);
     min-height: 200px;
+    max-height: 500px;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid rgb(218, 218, 218);
