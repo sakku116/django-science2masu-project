@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from termcolor import colored
 from django.middleware import csrf
+from api_app.models import RequestLog
 
 from modules import (
     createUrlListFromFile,
@@ -86,8 +87,18 @@ def log(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect("/login/?direct_to=log_page")
     else:
-        with open(settings.BASE_DIR / "request_logs.txt", "r") as file:
-            log_content = file.readlines()
+        # get from file
+        # with open(settings.BASE_DIR / "request_logs.txt", "r") as file:
+        #     log_content = file.readlines()
+
+        # get from database
+        logs_querySet = RequestLog.objects.all().order_by("-Date")
+        log_count = logs_querySet.count()
+
+        log_content = []
+        for log in logs_querySet:
+            log_string = f"=> ({log.Date.strftime('%d/%m/%Y %H:%M:%S')}) = {log.Username} | {log.Method} {log.Path} ({log.ViewName}) | {log.Device}"
+            log_content.append(log_string)
 
         return render(
             request,
