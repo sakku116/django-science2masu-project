@@ -32,7 +32,7 @@ urlpatterns = [
     path('external_hit', views.externalHit, name="external_hit"),
     path('sitemap.xml', views.siteMap, name="sitemap"),
     path('robots.txt', views.robots, name="robots"),
-    path('googleaca00d20757d854f.html', views.googleSiteVerification, name="google-site-verification"),
+    path('google068468d69c24c550.html', views.googleSiteVerification, name="google-site-verification"),
     path('ads.txt', views.ads, name="ads"),
 ]
 #
