@@ -161,7 +161,7 @@ USE_TZ = ENV_TZ
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [(BASE_DIR / 'static')] # Extra places for django to find static files
-STATIC_ROOT = BASE_DIR / 'collecstatic'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
