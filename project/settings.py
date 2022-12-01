@@ -64,6 +64,7 @@ if is_production():
     DEBUG = False
 else:
     DEBUG = True
+print(f"debug: {is_production()}")
 ALLOWED_HOSTS = ['*']
 
 
@@ -112,10 +113,8 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # ============================> DATABASE <============================
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-print(ENV_HEROKU_POSTGRESQL_ROSE_URL)
-print(ENV_USE_DATABASE)
 if ENV_USE_DATABASE == 'local':
-    print("local")
+    print("database type: local")
     # local database
     DATABASES = {
         'default': {
@@ -124,7 +123,7 @@ if ENV_USE_DATABASE == 'local':
         }
     }
 else:
-    print("remote")
+    print("database type: remote")
     # remote database
     DATABASES = {
         'default': dj_database_url.config(default=ENV_HEROKU_POSTGRESQL_ROSE_URL)
