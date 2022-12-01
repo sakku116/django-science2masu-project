@@ -185,4 +185,4 @@ SESSION_COOKIE_AGE = 1209600
 
 # ============================> CSRF <============================
 # https://docs.djangoproject.com/en/4.0/ref/csrf/
-CSRF_TRUSTED_ORIGINS = ['https://science2masu.herokuapp.com', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://science2masu.herokuapp.com', 'https://science2masu.up.railway.app', 'http://127.0.0.1']
