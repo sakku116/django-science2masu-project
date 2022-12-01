@@ -163,6 +163,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [(BASE_DIR / 'static')] # Extra places for django to find static files
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_MANIFEST_STRICT = False
 
 
 # ============================> DEFAULT PRIMARY KEY FIELD TYPE <============================
