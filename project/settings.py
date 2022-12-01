@@ -36,7 +36,6 @@ ENV_EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", '')
 ENV_USE_DATABASE = os.environ.get("USE_DATABASE", 'remote')
 ENV_DATABASE_CONN_URL = os.environ.get("DATABASE_CONN_URL", '')
 ENV_HEROKU_POSTGRESQL_ROSE_URL = os.environ.get("HEROKU_POSTGRESQL_ROSE_URL", '') # need to be updated manually in local
-print(ENV_HEROKU_POSTGRESQL_ROSE_URL)
 
 ENV_GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", '')
 ENV_GITHUB_PRIVATE_REPO = os.environ.get("GITHUB_PRIVATE_REPO", '')
@@ -113,7 +112,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # ============================> DATABASE <============================
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+print(ENV_HEROKU_POSTGRESQL_ROSE_URL)
+print(ENV_USE_DATABASE)
 if ENV_USE_DATABASE == 'local':
+    print("local")
     # local database
     DATABASES = {
         'default': {
@@ -122,6 +124,7 @@ if ENV_USE_DATABASE == 'local':
         }
     }
 else:
+    print("remote")
     # remote database
     DATABASES = {
         'default': dj_database_url.config(default=ENV_HEROKU_POSTGRESQL_ROSE_URL)
