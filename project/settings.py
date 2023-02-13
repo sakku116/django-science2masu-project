@@ -126,7 +126,7 @@ else:
     print("database type: remote")
     # remote database
     DATABASES = {
-        'default': dj_database_url.config(default=ENV_HEROKU_POSTGRESQL_ROSE_URL)
+        'default': dj_database_url.config(default=ENV_DATABASE_CONN_URL)
     }
 #from django.db import connection
 #print(connection.settings_dict['NAME'])
