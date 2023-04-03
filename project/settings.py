@@ -185,7 +185,7 @@ EMAIL_HOST_PASSWORD = ENV_EMAIL_HOST_PASSWORD
 # https://docs.djangoproject.com/en/4.0/ref/settings/#sessions
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_SAVE_EVERY_REQUEST = True
-SESSION_COOKIE_AGE = 1209600
+SESSION_COOKIE_AGE = 5 * 60 * 60 * 24 * 7  # 7 days
 
 # ============================> CSRF <============================
 # https://docs.djangoproject.com/en/4.0/ref/csrf/
